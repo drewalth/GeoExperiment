@@ -2,7 +2,7 @@
 
 A small geofencing experiment with iOS expanding on [GurjitGora/geofencing](https://github.com/GurjitGora/geofencing).
 
-![banner](GeoExperiment/Preview Content/Preview Assets.xcassets/screengrab.imageset/screengrab.png)
+![banner](https://raw.githubusercontent.com/drewalth/GeoExperiment/main/GeoExperiment/Preview%20Content/Preview%20Assets.xcassets/screengrab.imageset/screengrab.png)
 
 ## Goal 
 
