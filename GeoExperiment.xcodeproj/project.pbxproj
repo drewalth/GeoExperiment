@@ -14,6 +14,11 @@
 		A12E80A7291B07BA00D72582 /* GeoExperimentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12E80A6291B07BA00D72582 /* GeoExperimentTests.swift */; };
 		A12E80B1291B07BA00D72582 /* GeoExperimentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12E80B0291B07BA00D72582 /* GeoExperimentUITests.swift */; };
 		A12E80B3291B07BA00D72582 /* GeoExperimentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12E80B2291B07BA00D72582 /* GeoExperimentUITestsLaunchTests.swift */; };
+		A12E80C0291B07E100D72582 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12E80BF291B07E100D72582 /* MapView.swift */; };
+		A12E80C7291B08A000D72582 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12E80C6291B08A000D72582 /* Location.swift */; };
+		A12E80C9291B08D200D72582 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12E80C8291B08D200D72582 /* MapViewModel.swift */; };
+		A12E80CD291B140100D72582 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12E80CC291B140100D72582 /* Controller.swift */; };
+		A17F8009292186CC00B9C916 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A17F8008292186CC00B9C916 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,12 @@
 		A12E80AC291B07BA00D72582 /* GeoExperimentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeoExperimentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A12E80B0291B07BA00D72582 /* GeoExperimentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoExperimentUITests.swift; sourceTree = "<group>"; };
 		A12E80B2291B07BA00D72582 /* GeoExperimentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoExperimentUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A12E80BF291B07E100D72582 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		A12E80C6291B08A000D72582 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		A12E80C8291B08D200D72582 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		A12E80CA291B0BA500D72582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A12E80CC291B140100D72582 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		A17F8008292186CC00B9C916 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +85,7 @@
 		A12E8089291B07B900D72582 = {
 			isa = PBXGroup;
 			children = (
+				A17F8008292186CC00B9C916 /* README.md */,
 				A12E8094291B07B900D72582 /* GeoExperiment */,
 				A12E80A5291B07BA00D72582 /* GeoExperimentTests */,
 				A12E80AF291B07BA00D72582 /* GeoExperimentUITests */,
@@ -94,10 +106,15 @@
 		A12E8094291B07B900D72582 /* GeoExperiment */ = {
 			isa = PBXGroup;
 			children = (
+				A12E80CB291B13F500D72582 /* Controller */,
+				A12E80CA291B0BA500D72582 /* Info.plist */,
+				A12E80C4291B086F00D72582 /* Model */,
+				A12E80C3291B086400D72582 /* View Model */,
 				A12E8095291B07B900D72582 /* GeoExperimentApp.swift */,
 				A12E8097291B07B900D72582 /* ContentView.swift */,
 				A12E8099291B07BA00D72582 /* Assets.xcassets */,
 				A12E809B291B07BA00D72582 /* Preview Content */,
+				A12E80C5291B088300D72582 /* View */,
 			);
 			path = GeoExperiment;
 			sourceTree = "<group>";
@@ -125,6 +142,38 @@
 				A12E80B2291B07BA00D72582 /* GeoExperimentUITestsLaunchTests.swift */,
 			);
 			path = GeoExperimentUITests;
+			sourceTree = "<group>";
+		};
+		A12E80C3291B086400D72582 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				A12E80C8291B08D200D72582 /* MapViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		A12E80C4291B086F00D72582 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A12E80C6291B08A000D72582 /* Location.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A12E80C5291B088300D72582 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A12E80BF291B07E100D72582 /* MapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A12E80CB291B13F500D72582 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A12E80CC291B140100D72582 /* Controller.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A17F8009292186CC00B9C916 /* README.md in Resources */,
 				A12E809D291B07BA00D72582 /* Preview Assets.xcassets in Resources */,
 				A12E809A291B07BA00D72582 /* Assets.xcassets in Resources */,
 			);
@@ -258,7 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A12E8098291B07B900D72582 /* ContentView.swift in Sources */,
+				A12E80C7291B08A000D72582 /* Location.swift in Sources */,
+				A12E80C0291B07E100D72582 /* MapView.swift in Sources */,
+				A12E80CD291B140100D72582 /* Controller.swift in Sources */,
 				A12E8096291B07B900D72582 /* GeoExperimentApp.swift in Sources */,
+				A12E80C9291B08D200D72582 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +474,7 @@
 				DEVELOPMENT_TEAM = 2BTKYF3W9D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GeoExperiment/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +504,7 @@
 				DEVELOPMENT_TEAM = 2BTKYF3W9D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GeoExperiment/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
