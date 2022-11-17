@@ -12,18 +12,19 @@ import MapKit
 import SwiftUI
 
 extension MapView {
-    // map defaults
     enum mapDefaults {
-        static let initialLocation = CLLocationCoordinate2D(latitude: 39.716516, longitude: -104.948321)
-        static let initialSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        /// Geographic region which triggers enter/exit actions. Add your coordinates here.
+        static let zone01 = CLLocationCoordinate2D(latitude: 39.716516, longitude: -104.948321)
+        /// Geographic region which triggers enter/exit actions. Add your coordinates here.
         static let zone02 = CLLocationCoordinate2D(latitude: 39.717839, longitude: -104.946320)
+        static let initialSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
     }
 
     @MainActor final class ViewModel: NSObject, ObservableObject, CLLocationManagerDelegate, MKMapViewDelegate {
         @Published private(set) var authorizationStatus: UNAuthorizationStatus?
         @Published var distanceInMeter: Double = 0.0
         @Published var region: MKCoordinateRegion = .init(
-            center: mapDefaults.initialLocation,
+            center: mapDefaults.zone01,
             span: mapDefaults.initialSpan)
 
         var apiController = Controller()
@@ -33,18 +34,18 @@ extension MapView {
         var initialCoordinate: CLLocationCoordinate2D?
         var movedCoordinate: CLLocationCoordinate2D?
 
-        // draw circle on map
+        /// The locations/zones to draw circles on map
         let locations: [Location] = [
-            Location(name: "zone-01", coordinate: mapDefaults.initialLocation),
+            Location(name: "zone-01", coordinate: mapDefaults.zone01),
             Location(name: "zone-02", coordinate: mapDefaults.zone02),
         ]
 
         // Create Geofence Region with 10 meter radius
-        let geofenceRegion = CLCircularRegion(center: mapDefaults.initialLocation,
+        let geofenceRegion = CLCircularRegion(center: mapDefaults.zone01,
                                               radius: 10,
                                               identifier: "SafeArea")
 
-        var circle = MKCircle(center: mapDefaults.initialLocation, radius: 10)
+        var circle = MKCircle(center: mapDefaults.zone01, radius: 10)
         var circle02 = MKCircle(center: mapDefaults.zone02, radius: 10)
 
         var locationMangager: CLLocationManager?
